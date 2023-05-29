@@ -10,6 +10,9 @@
 using System;
 using System.Reflection;
 
+[assembly: AspNetCore.SassCompiler.SassCompilerAttribute("/Users/maks/.nuget/packages/aspnetcore.sasscompiler/1.62.1/build/../runtimes/osx-" +
+    "arm64/src/dart", "/Users/maks/.nuget/packages/aspnetcore.sasscompiler/1.62.1/build/../runtimes/osx-" +
+    "arm64/src/sass.snapshot")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("WsBlazor")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]

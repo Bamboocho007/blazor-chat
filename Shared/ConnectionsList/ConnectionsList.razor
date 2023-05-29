@@ -1,0 +1,32 @@
+@using WsBlazor.Data.DTO
+@using System.Text.Json.Serialization
+@using System.Text.Json
+@inject IHttpClientFactory ClientFactory
+@inject HttpClient httpClient
+
+<ul>
+	@foreach (var item in connectionsList)
+	{
+		<li>
+			<button @onclick="@(e => OpenChat(item))" type="button">@item.UserName</button>
+		</li>
+	}
+</ul>
+
+@code {
+	[Parameter]
+	public Guid UserId { get; set; }
+	private List<UserConnectionDto> connectionsList = new();
+
+	private void OpenChat(UserConnectionDto conn) {
+
+	}
+
+	protected override async Task OnInitializedAsync() {
+		var data = await httpClient.GetFromJsonAsync<List<UserConnectionDto>>($"http://localhost:5149/Connections/{UserId}");
+			
+		if (data != null) {
+			connectionsList = data;
+		}
+	}
+}

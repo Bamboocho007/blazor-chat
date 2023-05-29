@@ -1,0 +1,16 @@
+<EditForm Model="this" OnSubmit="@LoginHandler">
+  <label>
+    <p>User login</p>
+    <InputText @bind-Value="UserName"></InputText>
+  </label>
+  <button type="submit">Login</button>
+</EditForm>
+
+@code {
+  [Parameter]
+  public EventCallback<string> OnLogin {get; set;}
+  public string UserName {get; set;} = string.Empty;
+  private async Task LoginHandler() {
+    await OnLogin.InvokeAsync(UserName);
+  }
+}

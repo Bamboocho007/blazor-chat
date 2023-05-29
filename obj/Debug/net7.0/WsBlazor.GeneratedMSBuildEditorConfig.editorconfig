@@ -20,33 +20,29 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/maks/Documents/git_projects/blazor-chat/Pages/Counter.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ291bnRlci5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/maks/Documents/git_projects/blazor-chat/Pages/FetchData.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRmV0Y2hEYXRhLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
 [/Users/maks/Documents/git_projects/blazor-chat/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXgucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/maks/Documents/git_projects/blazor-chat/Shared/SurveyPrompt.razor]
-build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL1N1cnZleVByb21wdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/maks/Documents/git_projects/blazor-chat/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/maks/Documents/git_projects/blazor-chat/Shared/MainLayout.razor]
-build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL01haW5MYXlvdXQucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = b-65aalj0xfp
+[/Users/maks/Documents/git_projects/blazor-chat/Components/Login/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9Mb2dpbi9Mb2dpbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-5uo6nedesv
 
-[/Users/maks/Documents/git_projects/blazor-chat/Shared/NavMenu.razor]
-build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL05hdk1lbnUucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = b-e78wy0vhvo
+[/Users/maks/Documents/git_projects/blazor-chat/Shared/ConnectionsList/ConnectionsList.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL0Nvbm5lY3Rpb25zTGlzdC9Db25uZWN0aW9uc0xpc3QucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-zqgrwvrbll
+
+[/Users/maks/Documents/git_projects/blazor-chat/Shared/MainLayout/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL01haW5MYXlvdXQvTWFpbkxheW91dC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-3j15wij85b
+
+[/Users/maks/Documents/git_projects/blazor-chat/Shared/NavMenu/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL05hdk1lbnUvTmF2TWVudS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-gcpyqiprxt
 
 [/Users/maks/Documents/git_projects/blazor-chat/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXJyb3IuY3NodG1s

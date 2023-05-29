@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/maks/Documents/cSharp/WsBlazor/WsBlazor.csproj": {}
+    "/Users/maks/Documents/git_projects/blazor-chat/WsBlazor.csproj": {}
   },
   "projects": {
-    "/Users/maks/Documents/cSharp/WsBlazor/WsBlazor.csproj": {
+    "/Users/maks/Documents/git_projects/blazor-chat/WsBlazor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/maks/Documents/cSharp/WsBlazor/WsBlazor.csproj",
+        "projectUniqueName": "/Users/maks/Documents/git_projects/blazor-chat/WsBlazor.csproj",
         "projectName": "WsBlazor",
-        "projectPath": "/Users/maks/Documents/cSharp/WsBlazor/WsBlazor.csproj",
+        "projectPath": "/Users/maks/Documents/git_projects/blazor-chat/WsBlazor.csproj",
         "packagesPath": "/Users/maks/.nuget/packages/",
-        "outputPath": "/Users/maks/Documents/cSharp/WsBlazor/obj/",
+        "outputPath": "/Users/maks/Documents/git_projects/blazor-chat/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/maks/.nuget/NuGet/NuGet.Config"
@@ -37,6 +37,12 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "AspNetCore.SassCompiler": {
+              "target": "Package",
+              "version": "[1.62.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

@@ -1,0 +1,48 @@
+﻿@using WsBlazor.Shared.NavMenu
+@using WsBlazor.Data.DTO
+@using WsBlazor.Components.Login
+@inject HttpClient httpClient
+@inherits LayoutComponentBase
+
+<PageTitle>WsBlazor</PageTitle>
+
+<div class="page">
+    @if (User != null)
+    { 
+        <div class="sidebar">
+            <NavMenu User="User"/>
+        </div>
+
+        <main>
+            <div class="top-row px-4">
+                <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+            </div>
+
+            <article class="content px-4">
+                @Body
+            </article>
+        </main>
+    }
+    else
+    {
+        <main>
+            <Login OnLogin="@(e => LoginHandler(e))"></Login>
+        </main>
+    }
+</div>
+
+@code {
+    private User? User { get; set; }
+    
+    private string userName { get; set; } = string.Empty;
+    
+    private async Task LoginHandler(string userName) {
+        var data = await httpClient.GetFromJsonAsync<User>($"http://localhost:5149/Users/{userName}");
+			
+		if (data != null) {
+            User = data;
+            Console.WriteLine(User.Name);
+        }
+			
+    }
+}

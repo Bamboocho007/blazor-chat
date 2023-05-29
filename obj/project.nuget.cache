@@ -1,8 +1,19 @@
 {
   "version": 2,
-  "dgSpecHash": "O09rTtEMRfru5aDGXIJ/mOogyMTBn000LjzvcV+WLVsXXH1SvPszo1M8rzs5sIbiCj6kkdo1Sd9XyLmRR6BKvg==",
+  "dgSpecHash": "O3UNupPj2jHVDZ3VAAYiYYAyE4qpSIuEP8i40zQ5yQpSMq2wdS1kBOwPyF863HB+DOvsfmh7HlaJvHnSH2YTCA==",
   "success": true,
-  "projectFilePath": "/Users/maks/Documents/cSharp/WsBlazor/WsBlazor.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/Users/maks/Documents/git_projects/blazor-chat/WsBlazor.csproj",
+  "expectedPackageFiles": [
+    "/Users/maks/.nuget/packages/aspnetcore.sasscompiler/1.62.1/aspnetcore.sasscompiler.1.62.1.nupkg.sha512",
+    "/Users/maks/.nuget/packages/microsoft.extensions.configuration/3.1.0/microsoft.extensions.configuration.3.1.0.nupkg.sha512",
+    "/Users/maks/.nuget/packages/microsoft.extensions.configuration.abstractions/3.1.0/microsoft.extensions.configuration.abstractions.3.1.0.nupkg.sha512",
+    "/Users/maks/.nuget/packages/microsoft.extensions.configuration.binder/3.1.0/microsoft.extensions.configuration.binder.3.1.0.nupkg.sha512",
+    "/Users/maks/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/3.1.0/microsoft.extensions.dependencyinjection.abstractions.3.1.0.nupkg.sha512",
+    "/Users/maks/.nuget/packages/microsoft.extensions.fileproviders.abstractions/3.1.0/microsoft.extensions.fileproviders.abstractions.3.1.0.nupkg.sha512",
+    "/Users/maks/.nuget/packages/microsoft.extensions.hosting.abstractions/3.1.0/microsoft.extensions.hosting.abstractions.3.1.0.nupkg.sha512",
+    "/Users/maks/.nuget/packages/microsoft.extensions.logging.abstractions/3.1.0/microsoft.extensions.logging.abstractions.3.1.0.nupkg.sha512",
+    "/Users/maks/.nuget/packages/microsoft.extensions.options/3.1.0/microsoft.extensions.options.3.1.0.nupkg.sha512",
+    "/Users/maks/.nuget/packages/microsoft.extensions.primitives/3.1.0/microsoft.extensions.primitives.3.1.0.nupkg.sha512"
+  ],
   "logs": []
 }

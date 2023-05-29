@@ -12,4 +12,7 @@
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <SourceRoot Include="/Users/maks/.nuget/packages/" />
   </ItemGroup>
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)aspnetcore.sasscompiler/1.62.1/build/AspNetCore.SassCompiler.props" Condition="Exists('$(NuGetPackageRoot)aspnetcore.sasscompiler/1.62.1/build/AspNetCore.SassCompiler.props')" />
+  </ImportGroup>
 </Project>
