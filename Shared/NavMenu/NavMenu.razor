@@ -2,27 +2,27 @@
 @using WsBlazor.Data.DTO
 
 <div class="top-row ps-3 navbar navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">WsBlazor</a>
-        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
+	<div class="container-fluid">
+		<a class="navbar-brand" href="">WsBlazor</a>
+		<button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+	</div>
 </div>
 
 @if (User != null)
 {
-    <ConnectionsList UserId="User.Id"></ConnectionsList>
+	<ConnectionsList UserId="User.Id"></ConnectionsList>
 }
 
 @code {
-    [Parameter]
-    public User? User {get; set;}
-    private bool collapseNavMenu = true;
-    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+	[Parameter]
+	public User? User {get; set;}
+	private bool collapseNavMenu = true;
+	private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
 
-    private void ToggleNavMenu()
-    {
-        collapseNavMenu = !collapseNavMenu;
-    }
+	private void ToggleNavMenu()
+	{
+			collapseNavMenu = !collapseNavMenu;
+	}
 }

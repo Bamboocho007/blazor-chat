@@ -1,48 +1,85 @@
 ﻿@using WsBlazor.Shared.NavMenu
 @using WsBlazor.Data.DTO
 @using WsBlazor.Components.Login
+@using System.Text.Json
 @inject HttpClient httpClient
+@inject Blazored.LocalStorage.ILocalStorageService localStorage
 @inherits LayoutComponentBase
 
 <PageTitle>WsBlazor</PageTitle>
 
 <div class="page">
-    @if (User != null)
-    { 
-        <div class="sidebar">
-            <NavMenu User="User"/>
-        </div>
+	@if (User != null)
+	{ 
+		<div class="sidebar">
+			<NavMenu User="User"/>
+		</div>
 
-        <main>
-            <div class="top-row px-4">
-                <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
-            </div>
+		<main>
+			<div class="top-row px-4">
+				<EditForm class="user-search" Model="this" OnSubmit="@SearchUserHandler">
+					<label class="user-search-label">
+						<span>User to search</span>
+						<InputText @bind-Value="SerchedUser"></InputText>
+					</label>
+					<button type="submit">Ok</button>
+				</EditForm>
+			</div>
 
-            <article class="content px-4">
-                @Body
-            </article>
-        </main>
-    }
-    else
-    {
-        <main>
-            <Login OnLogin="@(e => LoginHandler(e))"></Login>
-        </main>
-    }
+			<article class="content px-4">
+				@Body
+			</article>
+		</main>
+	}
+	else
+	{
+		<main>
+			<Login OnLogin="@(e => LoginHandler(e))"></Login>
+		</main>
+	}
 </div>
 
 @code {
-    private User? User { get; set; }
-    
-    private string userName { get; set; } = string.Empty;
-    
-    private async Task LoginHandler(string userName) {
-        var data = await httpClient.GetFromJsonAsync<User>($"http://localhost:5149/Users/{userName}");
+	private User? User { get; set; }
+	private string SerchedUser {get; set;} = string.Empty;
+	protected override async Task OnAfterRenderAsync(bool firstRender)
+	{
+		if (firstRender) {
+			var user = await localStorage.GetItemAsync<User>("user");
+			if (user != null) {
+				User = user;
+				StateHasChanged();
+			}
+		}
+	}
+	private async Task SearchUserHandler() {
+		var user = await httpClient.GetFromJsonAsync<User>($"http://localhost:5149/Users/{SerchedUser}");
+		
+		if (user != null && User != null) {	
+			var userList = new List<NewChatWithUsersDto> {
+				new NewChatWithUsersDto {
+					UserId = user.Id,
+				},
+				new NewChatWithUsersDto {
+					UserId = User.Id,
+				},
+			};
+			var chatResponce = await httpClient.PostAsJsonAsync<List<NewChatWithUsersDto>>($"http://localhost:5149/Chats/getByUsers", userList);
 			
+			if (chatResponce != null) {
+				var chatStream = await chatResponce.Content.ReadAsStreamAsync();
+				var chat = await JsonSerializer.DeserializeAsync<Chat>(chatStream);
+			}
+		}
+
+	}
+	
+	private async Task LoginHandler(string userName) {
+		var data = await httpClient.GetFromJsonAsync<User>($"http://localhost:5149/Users/{userName}");
+		
 		if (data != null) {
-            User = data;
-            Console.WriteLine(User.Name);
-        }
-			
-    }
+			User = data;
+			await localStorage.SetItemAsync("user", data);
+		}
+	}
 }

@@ -1,4 +1,4 @@
-using WsBlazor.Data;
+using Blazored.LocalStorage;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddHttpClient();
+builder.Services.AddBlazoredLocalStorage();
 // builder.Services.AddSingleton(OwnHttpClient);
 
 var app = builder.Build();
