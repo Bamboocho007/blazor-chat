@@ -1,11 +1,8 @@
 @using WsBlazor.Data.DTO
-@using System.Text.Json.Serialization
-@using System.Text.Json
-@inject IHttpClientFactory ClientFactory
-@inject HttpClient httpClient
+@inject WsBlazor.Data.Services.ConnectionApiService connectionApiService
 
 <ul>
-	@foreach (var item in connectionsList)
+	@foreach (var item in connectionList)
 	{
 		<li>
 			<button @onclick="@(e => OpenChat(item))" type="button">@item.UserName</button>
@@ -14,19 +11,19 @@
 </ul>
 
 @code {
-	[Parameter]
+	[Parameter] 
 	public Guid UserId { get; set; }
-	private List<UserConnectionDto> connectionsList = new();
+	private List<UserConnectionDto> connectionList = new();
 
 	private void OpenChat(UserConnectionDto conn) {
 
 	}
 
 	protected override async Task OnInitializedAsync() {
-		var data = await httpClient.GetFromJsonAsync<List<UserConnectionDto>>($"http://localhost:5149/Connections/{UserId}");
+		var data = await connectionApiService.GetUserConnections(this.UserId);
 			
 		if (data != null) {
-			connectionsList = data;
+			connectionList = data;
 		}
 	}
 }

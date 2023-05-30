@@ -4,6 +4,8 @@
 @using System.Text.Json
 @inject HttpClient httpClient
 @inject Blazored.LocalStorage.ILocalStorageService localStorage
+@inject WsBlazor.Data.Services.UserApiService userApiService
+@inject WsBlazor.Data.Services.ChatApiService chatApiService
 @inherits LayoutComponentBase
 
 <PageTitle>WsBlazor</PageTitle>
@@ -53,7 +55,8 @@
 		}
 	}
 	private async Task SearchUserHandler() {
-		var user = await httpClient.GetFromJsonAsync<User>($"http://localhost:5149/Users/{SerchedUser}");
+		
+		var user = await userApiService.GetUserByName(SerchedUser);
 		
 		if (user != null && User != null) {	
 			var userList = new List<NewChatWithUsersDto> {
@@ -64,18 +67,17 @@
 					UserId = User.Id,
 				},
 			};
-			var chatResponce = await httpClient.PostAsJsonAsync<List<NewChatWithUsersDto>>($"http://localhost:5149/Chats/getByUsers", userList);
+			var chat = await chatApiService.CheckAvailableChatByUsers(userList);
 			
-			if (chatResponce != null) {
-				var chatStream = await chatResponce.Content.ReadAsStreamAsync();
-				var chat = await JsonSerializer.DeserializeAsync<Chat>(chatStream);
+			if (chat != null) {
+				
 			}
 		}
 
 	}
 	
 	private async Task LoginHandler(string userName) {
-		var data = await httpClient.GetFromJsonAsync<User>($"http://localhost:5149/Users/{userName}");
+		var data = await userApiService.GetUserByName(SerchedUser);
 		
 		if (data != null) {
 			User = data;

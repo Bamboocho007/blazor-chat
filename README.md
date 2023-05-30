@@ -1,1 +1,1 @@
-# blazor-chat
+# WsBlazor
