@@ -1,5 +1,5 @@
-using WsBlazor.Data.Services;
 using Blazored.LocalStorage;
+using WsBlazor.Data.Extentions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,10 +8,7 @@ builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddHttpClient();
 builder.Services.AddBlazoredLocalStorage();
-builder.Services.AddSingleton<UserApiService>();
-builder.Services.AddSingleton<ChatApiService>();
-builder.Services.AddSingleton<ConnectionApiService>();
-builder.Services.AddSingleton<MessageApiService>();
+builder.Services.RegisterAPIs();
 
 var app = builder.Build();
 
