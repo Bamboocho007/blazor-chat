@@ -77,8 +77,8 @@
 	}
 	
 	private async Task LoginHandler(string userName) {
-		var data = await userApiService.GetUserByName(SerchedUser);
-		
+		var data = await userApiService.GetUserByName(userName);
+
 		if (data != null) {
 			User = data;
 			await localStorage.SetItemAsync("user", data);

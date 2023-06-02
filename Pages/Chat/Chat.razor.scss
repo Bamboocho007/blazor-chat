@@ -1,0 +1,14 @@
+.new-message-line {
+  display: flex;
+  align-items: flex-start;
+}
+
+.new-message-input {
+  flex-grow: 1;
+}
+
+.new-message-send-btn {
+  width: 80px;
+  flex: 0 0 80px;
+  background-color: red;
+}

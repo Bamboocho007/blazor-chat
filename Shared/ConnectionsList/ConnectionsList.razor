@@ -1,5 +1,6 @@
 @using WsBlazor.Data.DTO
 @inject WsBlazor.Data.Services.ConnectionApiService connectionApiService
+@inject NavigationManager Navigation
 
 <ul>
 	@foreach (var item in connectionList)
@@ -16,7 +17,7 @@
 	private List<UserConnectionDto> connectionList = new();
 
 	private void OpenChat(UserConnectionDto conn) {
-
+		Navigation.NavigateTo($"Chat/{conn.ChatId}");
 	}
 
 	protected override async Task OnInitializedAsync() {
